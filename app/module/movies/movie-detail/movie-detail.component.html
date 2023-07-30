@@ -1,0 +1,31 @@
+<div *ngIf="item" class="row-container-movie d-flex">
+    <div class="col-12 col-md-6 text-center p-0 m-2">
+        <img [src]="imgBaseUrl + item.backdrop_path"  alt="" class="img-poster">
+    </div>
+    <div class="col-12 col-md-6 mt-4">
+        <strong>Género: </strong>
+        <div class="d-inline" *ngFor="let genre of item.genres">
+
+            <p-tag [value]="genre.name" severety ="success"></p-tag>
+        </div>
+        <div class="mt-2">
+            <strong>Título: </strong><label>{{item.title}}</label>
+        </div>
+        <div class="mt-2">
+            <strong>Eslogan: </strong><label>{{item.tagline}}</label>
+        </div>
+        <div class="mt-2">
+            <strong>Trailer: </strong><label>{{item.overview}}</label>
+        </div>
+        <div class="mt-2">
+            <strong>Total de votos: </strong><label>{{item.vote_count}}</label>
+        </div>
+        <div class="mt-2">
+            <strong>Estado: </strong><label>{{item.status}}</label>
+        </div>
+        <div class="col-12 mt-4">
+           <button pButton type="button" label="Regresar" (click)="goBack()"></button>
+        </div>
+      
+    </div>
+</div>
